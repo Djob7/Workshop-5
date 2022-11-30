@@ -1,0 +1,27 @@
+ProduitScalaire(a,b : ARRAY OF INTEGER[], VAR c : INTEGER)
+VAR
+ i : INTEGER;
+ BEGIN
+    FOR i FROM 1 TO a.length STEP 1  DO
+        c = c+a[i]*b[i]
+    END_FOR
+END
+
+ALGORITHM CalcOrth
+VAR
+    T1 : ARRAY OF INTEGER[3] := [2,4,5]
+    T2 : ARRAY OF INTEGER[3] := [2,4,5]
+    refsum: INTEGER := 0;
+BEGIN
+    IF (T1.length <> T2.length) THEN
+        Write("Error")
+    ELSE 
+        ProduitScalaire(T1,T2);
+        
+        IF (refsum =0) THEN
+            Write("Orth");
+        ELSE
+            Write("Non Orth"); 
+            END IF
+    END IF 
+END
